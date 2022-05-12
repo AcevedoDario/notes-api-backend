@@ -1,7 +1,16 @@
+<<<<<<< HEAD
 PUT http://localhost:3001/api/notes/6266b25500126e352a50a887
 Content-Type: application/json
 
 {
   "content": "Esto es una nueva nota modificada",
   "important": true
+=======
+PUT http://localhost:3001/api/notes/62445a07c0ff6dad946075fd
+Content-Type: application/json
+
+{
+  "content": "Esto es una nueva nota modificada",
+  "important": true
+>>>>>>> 6a857f777ab538a08b457819d6e8ccf19bd0570f
 }
