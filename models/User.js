@@ -5,7 +5,7 @@ const userSchema = new Schema({
     name: String,
     passwordHash: String,
     notes: [{
-        type: Schema.Type.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'Note'
     }]
 })
@@ -19,5 +19,5 @@ userSchema.set('toJSON', {
     }
 })
 
-const User = model('User', UserSchema)
+const User = model('User', userSchema)
 module.exports = User
