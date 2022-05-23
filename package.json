@@ -7,34 +7,26 @@
     "dev": "cross-env NODE_ENV=development nodemon index.js",
     "lint": "eslint .",
     "start": "cross-env NODE_ENV=production node index.js",
-    "test": "cross-env NODE_ENV=test jest --verbose --silent tests/notes.test.js",
+    "test": "cross-env NODE_ENV=test PORT=3002 jest --verbose tests/user.test.js",
     "test:watch": "npm run test -- --watch"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-<<<<<<< HEAD
     "jest": "^27.5.1",
     "nodemon": "^2.0.13",
     "standard": "16.0.4",
     "supertest": "^6.2.2"
   },
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "cors": "2.8.5",
     "cross-env": "^7.0.3",
     "dotenv": "16.0.0",
     "express": "4.17.1",
-    "mongoose": "5.11.15"
-=======
+    "mongoose": "^5.11.15",
     "nodemon": "^2.0.13",
     "standard": "16.0.4"
-  },
-  "dependencies": {
-    "cors": "2.8.5",
-    "dotenv": "16.0.0",
-    "express": "4.17.1",
-    "mongoose": "6.2.9"
->>>>>>> 6a857f777ab538a08b457819d6e8ccf19bd0570f
   },
   "eslintConfig": {
     "extends": "./node_modules/standard/eslintrc.json",
