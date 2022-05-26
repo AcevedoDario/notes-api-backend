@@ -62,4 +62,4 @@ describe('creating a new user', () => {
         mongoose.connection.close()
         server.close()
     })
-}) 
+})
