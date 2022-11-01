@@ -1,8 +1,8 @@
 POST http://localhost:3001/api/notes
 Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNGZmNTBiMWUyNDA2YTJiN2IxMWJhZSIsInVzZXJuYW1lIjoiRGFyeW9fdGhlX3NoYWRvdyIsImlhdCI6MTY2NzMxOTAwM30.qw7JBE9fMZwNPusdSgssxLoTA7UDxRn5l_AknN8hN9o
 
 {
   "content": "Nunca pierdas el entusiasmo",
-  "important": true,
-  "userId": "634ff50b1e2406a2b7b11bae"
+  "important": true
 }
