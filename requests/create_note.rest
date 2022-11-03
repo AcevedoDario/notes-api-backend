@@ -1,6 +1,6 @@
 POST http://localhost:3001/api/notes
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNGZmNTBiMWUyNDA2YTJiN2IxMWJhZSIsInVzZXJuYW1lIjoiRGFyeW9fdGhlX3NoYWRvdyIsImlhdCI6MTY2NzMxOTAwM30.qw7JBE9fMZwNPusdSgssxLoTA7UDxRn5l_AknN8hN9o
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNGZmNTBiMWUyNDA2YTJiN2IxMWJhZSIsInVzZXJuYW1lIjoiRGFyeW9fdGhlX3NoYWRvdyIsImlhdCI6MTY2NzQ5MjUyOX0.gX2ZIDT6HEXl1MjZawO77Sl0hArYTu7D7sumjni687o
 
 {
   "content": "Nunca pierdas el entusiasmo",
