@@ -1,7 +1,7 @@
 const notesRouter = require("express").Router();
 const User = require("../models/User");
 const Note = require("../models/Note");
-const jwt = require("jsonwebtoken");
+const userExtractor = require("../middleware/userExtractor");
 const e = require("express");
 
 //Get all notes
@@ -31,7 +31,7 @@ notesRouter.get("/:id", (request, response, next) => {
 });
 
 //Update a specific note
-notesRouter.put("/:id", (request, response, next) => {
+notesRouter.put("/:id", userExtractor, (request, response, next) => {
   const { id } = request.params;
   const note = request.body;
 
@@ -46,7 +46,7 @@ notesRouter.put("/:id", (request, response, next) => {
 });
 
 //Delete a note
-notesRouter.delete("/:id", (request, response, next) => {
+notesRouter.delete("/:id", userExtractor, (request, response, next) => {
   const { id } = request.params;
 
   Note.findByIdAndDelete(id)
@@ -55,23 +55,11 @@ notesRouter.delete("/:id", (request, response, next) => {
 });
 
 //Post a new note
-notesRouter.post("/", async (request, response) => {
+notesRouter.post("/", userExtractor, async (request, response) => {
   const { content, important = false } = request.body;
 
-  const authorization = request.get("authorization");
-  let token = "";
+  const { userId } = request;
 
-  if (authorization && authorization.toLowerCase().startsWith("bearer")) {
-    token = authorization.substring(7);
-  }
-
-  const decodedToken = jwt.verify(token, process.env.SECRET);
-
-  if (!token || !decodedToken.id) {
-    return response.status(401).json({ error: "token missing or invalid" });
-  }
-
-  const { id: userId } = decodedToken;
   const user = await User.findById(userId);
   //Check content is not empty
   if (!content) {
